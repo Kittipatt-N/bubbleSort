@@ -9,9 +9,9 @@ class BubbleSorter:
         n = len(self.list)
         for i in range(n - 1):
             swapped = False
-            for j in range(n - 1, i, -1):
-                if self.list[j] < self.list[j - 1]:
-                    self.list[j], self.list[j - 1] = self.list[j - 1], self.list[j]
+            for j in range(0, n - i - 1):
+                if self.list[j] > self.list[j + 1]:
+                    self.list[j], self.list[j + 1] = self.list[j + 1], self.list[j]
                     swapped = True
             print(f"After round {i + 1}: {self.list}")
             if not swapped:
@@ -28,3 +28,4 @@ if __name__ == '__main__':
 
     print("After sorting:")
     sorter.display()
+
